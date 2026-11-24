@@ -1,0 +1,64 @@
+Screen { background: #19161f; color: #ede8dd; }
+#timeline { height: 1fr; scrollbar-size-vertical: 1; padding: 0 1 1 1; }
+#compose-box { height: auto; background: #2a2332; border-top: solid #667482; padding: 1 2; margin-top: 1; }
+#compose-line { height: auto; background: #2a2332; }
+#chevron { width: 3; height: 1; color: #d7a2fa; text-style: bold; }
+#prompt, #prompt:focus { height: 1; width: 1fr; padding: 0; border: none; background: #2a2332; }
+#prompt .text-area--cursor-line { background: #2a2332; }
+#prompt .text-area--placeholder { color: #a4a7a0; }
+#model-line { height: 1; margin-top: 1; }
+#links { height: 1; align: left middle; margin: 1 0 0 1; }
+#links Button { min-width: 0; width: auto; height: 1; padding: 0 1; margin-right: 1; border: none; background: #19161f; color: #c9c5bb; }
+#links Button:focus, #links Button:hover { background: #373731; color: #f2c39d; }
+#hint { height: 1; color: #aaa99f; margin: 1 1; }
+#activity { height: 1; color: #e9ba91; margin-left: 1; }
+#location { height: 1; margin: 0 2 1 2; }
+#stage.short #compose-box { padding: 0 1; }
+#stage.short #model-line { margin-top: 0; }
+#stage.narrow { padding: 0 1; }
+.entry { height: auto; margin-top: 1; }
+.question { background: #292330; padding: 1 2; border-left: solid #8499ae; }
+.author { height: 1; margin: 1 0 0 0; color: #d7b5f3; text-style: bold; }
+.reply { margin: 0 0 0 2; }
+Collapsible { padding: 0; margin: 0 0 0 2; background: #19161f; border: none; }
+CollapsibleTitle { color: #afc0b7; padding: 0; }
+CollapsibleTitle:hover { background: #292d2b; }
+.dialog { width: 80; max-width: 100%; height: auto; max-height: 95%; border: round #d7a2fa; background: #202c33; padding: 0 1; }
+.settings { width: 66; padding: 1 2; background: #26202e; border: round #566974; }
+.settings Input { height: 1; border: none; background: #342c3e; margin-bottom: 1; padding: 0 1; }
+.settings Input:focus { background: #473551; }
+.settings Collapsible { margin: 1 0; background: #26202e; }
+.dialog-title { text-style: bold; color: #e9c8fd; margin-bottom: 1; }
+.muted { color: #acb6c1; }
+.settings Button { height: 1; min-width: 8; border: none; background: #34434a; margin-right: 1; }
+.settings #save { background: #c9a1ee; color: #172426; text-style: bold; }
+.buttons { height: auto; }
+#stage, #stage.home { padding: 1 2 0 2; align: center middle; }
+#column, #stage.home #column { width: 1fr; height: 1fr; max-width: 110; }
+#welcome { height: 1fr; align: center middle; margin: 0; }
+#identity { height: 4; width: auto; padding: 0; border: none; }
+#stage.short #welcome { margin: 0; }
+#compose-box { margin: 0; border: round #8a689e; }
+#bar { height: 2; border-bottom: solid #4c3e55; }
+#sidebar { display: none; width: 26; padding: 0 1 0 2; margin-left: 2; border-left: solid #45394f; }
+#stage.wide #sidebar { display: block; }
+.section-label { color: #d5a9ec; margin: 1 0; text-style: bold; }
+#session-info, #workspace-info { color: #bcb0c8; height: auto; }
+#links { margin: 0 1; }
+#links Button { color: #dbc7e5; }
+#links Button:hover, #links Button:focus { color: #f6ddff; background: #493651; }
+#hint { margin: 0 1; color: #aa9fb7; }
+#location { margin: 0; padding: 0 2; background: #231d29; }
+#activity { color: #e4b7ef; }
+#choices { height: auto; min-height: 1; max-height: 10; background: #26202e; }
+#choices > .option-list--option-highlighted { background: #44324f; color: #ffe9ff; text-style: bold; }
+.picker-help { margin-top: 1; color: #bcaec8; }
+.operation { background: #332b3c; padding: 1; margin: 1 0; }
+.inspector { height: 80%; }
+#detail-body { height: 1fr; }
+.settings Button:focus { text-style: reverse; }
+.edit-preview { height: auto; max-height: 8; margin-bottom: 1; }
+#recent { height: 1; width: auto; min-width: 0; max-width: 95%; margin-top: 2; padding: 0 1; background: #302837; color: #d4bddf; border: none; }
+#recent:focus, #recent:hover { background: #4b3757; }
+ModalScreen { align: center middle; background: #110f17 72%; }
+#choices { scrollbar-background: #29222f; scrollbar-color: #674f77; scrollbar-size-vertical: 1; }

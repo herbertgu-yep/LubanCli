@@ -1,0 +1,27 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+dist/
+build/
+*.egg-info/
+*.bundle
+.DS_Store
+
+# Local model configuration, sessions and diagnostic exports
+.env
+.env.*
+!.env.example
+.luban/
+.luban-data/
+credentials/
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+*.jsonl
+*.log
