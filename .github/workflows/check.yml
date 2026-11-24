@@ -1,0 +1,25 @@
+name: Checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv python install 3.12
+      - run: uv sync --locked --python 3.12
+      - run: uv run --locked ruff format --check src tests
+      - run: uv run --locked ruff check src tests
+      - run: uv run --locked mypy src
+      - run: uv run --locked pytest -q
+      - run: uv build
+      - name: Exercise installed wheel in a terminal
+        run: |
+          uv venv --python 3.12 "$RUNNER_TEMP/luban-installed"
+          uv pip install --python "$RUNNER_TEMP/luban-installed/bin/python" dist/*.whl
+          uv run --locked python tests/installed_demo.py "$RUNNER_TEMP/luban-installed"

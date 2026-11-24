@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lubancli"
+version = "0.1.0"
+description = "A workspace-scoped terminal coding assistant"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "typer>=0.15,<1", "textual>=2,<9", "rich>=13.9", "openai>=1.66,<3",
+  "pydantic>=2.10,<3", "platformdirs>=4", "mcp>=1.12,<2",
+  "jsonschema>=4.20", "pathspec>=0.12,<2", "filelock>=3.15",
+]
+[project.optional-dependencies]
+tokens = ["tiktoken>=0.8"]
+[dependency-groups]
+dev = ["pytest>=8", "pytest-asyncio>=0.25", "ruff>=0.11", "mypy>=1.15"]
+[project.scripts]
+Luban = "lubancli.cli:app"
+luban = "lubancli.cli:app"
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+[tool.mypy]
+python_version = "3.12"
+check_untyped_defs = true
+ignore_missing_imports = true
+[tool.ruff]
+target-version = "py312"
+[tool.ruff.lint]
+select = ["E4","E7","E9","F","I"]
+
+[tool.hatch.build.targets.sdist]
+only-include = ["src/lubancli", "README.md", "docs/terminal.png", "docs/runtime.md", "pyproject.toml", "uv.lock"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lubancli"]
+
+[tool.hatch.build]
+exclude = [
+  "**/.DS_Store", "**/.env", "**/.env.*", "**/.luban", "**/.luban-data",
+  "**/credentials", "**/*.db", "**/*.db-*", "**/*.sqlite", "**/*.sqlite-*",
+  "**/*.sqlite3", "**/*.sqlite3-*", "**/*.jsonl", "**/*.log", "**/*.bundle",
+]
