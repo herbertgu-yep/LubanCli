@@ -5,8 +5,10 @@ permissions:
 jobs:
   verify:
     strategy:
+      fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        # The native sandbox smoke test aborts on the macOS 26 runner.
+        os: [ubuntu-latest, macos-15]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
